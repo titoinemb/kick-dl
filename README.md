@@ -9,7 +9,7 @@ The best CLI program for downloading Kick VODS
 ## Installation
 
 ### 1. **First option (nodejs)**
-#### download the code source
+#### download the code source https://github.com/AlexanderTSX/kick-dl/archive/refs/heads/main.zip
 #### extract the zip
 #### install modules
   ```bash

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import GetM3u8File from "./functions/GetM3u8File";
 import M3u8ToMp4 from "./functions/M3u8ToMp4";
 
@@ -18,23 +19,34 @@ function isJSON(input: any): boolean {
 };
 
 (async (url: string): Promise<void> => {
-  if (!url || url.trim() === "") return console.log("invalid url, command exemple: node index.js URL");
+  if (!url || url.trim() === "") {
+    return console.log("Invalid URL, command example: node index.js URL");
+  }
+
+  const { chromium } = require('playwright');
+
+  try {
+    await chromium.launch();
+  } catch (error) {
+    console.log("Chromium is not installed, installing...");
+    const { execSync } = require('child_process');
+    execSync('npx playwright install chromium', { stdio: 'inherit' });
+  }
 
   let m3u8File: any = await GetM3u8File(url);
 
-  if(isJSON(m3u8File)) {
+  if (isJSON(m3u8File)) {
     let fileUrl = m3u8File.file;
     let fileName = m3u8File.name;
 
-    if (!fileUrl || !fileName) return console.log("Error for fetch the vod");
+    if (!fileUrl || !fileName) return console.log("Error fetching the VOD");
 
     await M3u8ToMp4({
       name: fileName,
       url: fileUrl,
     });
-    return;
+    return process.exit();
   } else {
-    return console.log("Error for fetch the vod");
-  };
-
+    return console.log("Error fetching the VOD");
+  }
 })(args ? args.toString() : "");
