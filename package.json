@@ -1,5 +1,5 @@
 {
-  "name": "@titoinemb/kick-dlp",
+  "name": "kick-dlp",
   "version": "1.0.1",
   "description": "The best CLI program for downloading Kick VODS",
   "scripts": {
@@ -36,5 +36,8 @@
   },
   "dependencies": {
     "playwright": "^1.55.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
