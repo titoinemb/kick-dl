@@ -5,7 +5,7 @@ import { join } from 'path';
 export default async ({ url, name }: { url: string; name: string }): Promise<string> => {
   if (!url || url.trim() === "") return "invalid url";
 
-  let destinationDir: string = join(process.env.HOME || '', 'Videos', 'kick-dl');
+  let destinationDir: string = join(process.env.HOME || '', 'Videos', 'kick-dlp');
   mkdirSync(destinationDir, { recursive: true });
 
   let output: string = join(destinationDir, `${name}.mp4`);
@@ -28,14 +28,15 @@ export default async ({ url, name }: { url: string; name: string }): Promise<str
     });
 
     process.on('error', (error) => {
-      reject(`Erreur: ${error.message}`);
+      reject(`Error: ${error.message}`);
     });
 
     process.on('close', (code) => {
       if (code !== 0) {
-        reject(`Processus terminé avec le code: ${code}`);
+        reject(`Process exited with code: ${code}`);
       } else {
-        resolve(`Téléchargement terminé : ${output}`);
+        resolve(`Download complete! The file is located at: ${output}`);
+        console.log(`Download complete! The file is located at: ${output}`)
       };
     });
   });

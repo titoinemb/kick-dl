@@ -1,16 +1,16 @@
 {
-  "name": "kick-dl",
+  "name": "kick-dlp",
   "version": "1.0.0",
-  "description": "The best CLI program for downloading Kick VODs",
+  "description": "The best CLI program for downloading Kick VODS",
   "scripts": {
     "start": "node ./dist/index.js",
     "test": "jest ./src/tests/__test__.spec.ts",
     "build": "tsc && find ./dist -type f -name '*.js' -exec sh -c 'terser \"$1\" --compress --mangle --output \"${1%.js}.js\"' _ {} \\;",
     "link": "npm link",
-    "unlink": "npm unlink -g kick-dl"
+    "unlink": "npm unlink -g kick-dlp"
   },
   "bin": {
-    "kick-dl": "./dist/index.js"
+    "kick-dlp": "./dist/index.js"
   },
   "keywords": [
     "kick",
@@ -24,15 +24,8 @@
     "videos",
     "kickvideos"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/titoinemb/kick-dl.git"
-  },
-  "author": "Ton Nom",
+  "author": "",
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^24.5.2",
