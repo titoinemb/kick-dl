@@ -22,4 +22,6 @@ The best CLI program for downloading Kick VODS
   ```
 
 ### 2. **second option (npm)**
-....
+  ```bash
+  npm i kick-dlp -g
+  ```
