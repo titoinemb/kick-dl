@@ -9,7 +9,7 @@ The best CLI program for downloading Kick VODS
 ## Installation
 
 ### 1. **First option (nodejs)**
-#### download the code source https://github.com/AlexanderTSX/kick-dl/archive/refs/heads/main.zip
+#### download the code source
 #### extract the zip
 #### install modules
   ```bash
@@ -23,5 +23,5 @@ The best CLI program for downloading Kick VODS
 
 ### 2. **second option (npm)**
   ```bash
-  npm install -g kick-dl
+  npm install -g kick-dlp
   ```
