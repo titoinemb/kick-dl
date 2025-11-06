@@ -1,4 +1,4 @@
-# kick-dl
+# kick-dlp
 
 The best CLI program for downloading Kick VODS
 
