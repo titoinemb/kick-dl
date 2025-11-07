@@ -20,9 +20,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
           registry-url: 'https://registry.npmjs.org/'
-          scope: '@titoinemb'  # Remplace par ton user GitHub
+          scope: '@titoinemb'  # Remplacez par votre nom d'utilisateur GitHub
 
       - name: Install dependencies
         run: npm ci
@@ -38,6 +38,6 @@ jobs:
       - name: Publish to GitHub Packages
         run: |
           npm config set registry https://npm.pkg.github.com/
-          npm publish
+          npm publish --access public  # Ajoutez cette option si nécessaire
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
