@@ -1,4 +1,4 @@
-# kick-dl
+# kick-dlp
 
 The best CLI program for downloading Kick VODS
 
@@ -15,18 +15,13 @@ The best CLI program for downloading Kick VODS
   ```bash
   npm install
   ```
-#### use
+#### start the project
   ```bash
   # in the project file
   npm start <URL>
   ```
 
 ### 2. **second option (npm)**
-#### install
   ```bash
   npm i kick-dlp -g
   ```
-#### use
-```bash
-npx kick-dlp <url>
-```
